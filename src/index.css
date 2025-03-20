@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Light and Dark Theme Variables */
+    :root .light {
+        --color-success: hsl(145, 100%, 39.2%);
+        --color-warning: hsl(45, 100%, 51.4%);
+        --color-error: rgb(244, 67, 54);
+        --color-disabled: hsla(0, 0%, 0%, 0.12);
+    }
+
+    :root .dark {
+        --color-success: hsl(144.9, 100%, 39.22%);
+        --color-warning: hsl(45, 100%, 51.4%);
+        --color-error: hsl(4.11, 89.62%, 58.43%);
+        --color-disabled: hsla(0, 0%, 0%, 0.12);
+    }
+
+    /* Theme-Specific Variables */
+    :root .tibetan.light {
+        --color-success: rgb(111, 158, 71);
+        --color-warning: rgb(220, 148, 0);
+        --color-error: rgb(208, 8, 12);
+        --color-disabled: rgba(0, 0, 0, 0.12);
+    }
+
+    :root .amethyst.light {
+        --color-base: rgb(255, 255, 255);
+        --color-primary: rgb(99, 43, 197);
+        --color-primary-inverted: rgb(239, 233, 247);
+        --color-secondary: rgb(37, 148, 239);
+        --color-secondary-inverted: rgb(232, 243, 252);
+        --color-bg-layout: rgb(238, 242, 246);
+        --color-bg-search: rgb(248, 250, 252);
+        --color-bg-modal: rgba(0, 0, 0, 0.5);
+        --color-border: rgb(189, 189, 189);
+        --color-text: rgb(54, 66, 83);
+        --color-text-accent: rgb(54, 66, 83);
+        --color-text-muted: rgb(157, 157, 158);
+        --color-scrollbar: rgb(153, 153, 153);
+        --color-scrollbar-hover: rgb(104, 117, 135);
+        --color-utility: rgb(146, 147, 175);
+        --color-utility-dark: rgb(41, 49, 79);
+        --color-utility-logo: rgb(31, 51, 151);
+        --color-utility-icon-search: rgb(75, 79, 87);
+        --color-utility-text-search: rgb(138, 144, 156);
+        --shadow-button: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+        --shadow-button-hover: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+        --shadow-inner-focus: var(--color-secondary) inset 0px 0px 0px 1.5px;
+        --shadow-paper-elevation-1: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    :root .amethyst.dark {
+        --color-primary: hsl(262, 64%, 47%);
+        --color-secondary: hsl(207, 86%, 54%);
+        --color-tertiary: hsl(45, 100%, 51%);
+        --color-bg-base: hsl(0, 0%, 100%);
+        --color-bg-primary: hsl(0, 0%, 12%);
+        --color-bg-secondary: hsl(0, 0%, 16%);
+        --color-border: hsl(0, 0%, 20%);
+        --color-text-base: hsl(0, 0%, 88%);
+        --color-scrollbar: hsl(0, 0%, 40%);
+        --color-scrollbar_hover: hsl(0, 0%, 53%);
+    }
+
+    :root .tibetan.light {
+        --color-primary: rgb(159, 52, 52);
+        --color-primary-inverted: rgb(220, 146, 67);
+        --color-secondary: rgb(48, 83, 119);
+        --color-secondary-inverted: rgb(76, 167, 170);
+        --color-bg-base: rgb(231, 212, 190);
+        --color-bg-layout: rgb(201, 186, 148);
+        --color-bg-search: rgb(104, 63, 85);
+        --color-border: rgb(182, 176, 156);
+        --color-text: rgb(84, 68, 41);
+        --color-text-base: rgb(255, 255, 255);
+        --color-text-accent: rgb(54, 66, 83);
+        --color-text-muted: rgba(0, 0, 0, 0.26);
+        --color-scrollbar: rgb(202, 72, 72);
+        --color-scrollbar-hover: rgb(243, 12, 28);
+        --color-utility: rgb(171, 146, 135);
+        --color-utility-dark: rgb(72, 74, 112);
+        --color-utility-logo: rgb(208, 8, 12);
+        --color-utility-icon-search: rgb(195, 206, 18);
+        --color-utility-text-search: rgb(215, 194, 109);
+        --shadow-button: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+        --shadow-button-hover: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+        --shadow-inner-focus: rgb(210, 67, 138) inset 0px 0px 0px 1.5px;
+    }
+
+    :root .azure.light {
+        --color-primary: rgb(12, 97, 205);
+        --color-primary-inverted: rgb(216, 236, 255);
+        --color-secondary: rgb(0, 150, 230);
+        --color-secondary-inverted: rgb(200, 235, 255);
+        --color-bg-base: rgb(240, 247, 255);
+        --color-bg-layout: rgb(220, 235, 250);
+        --color-bg-search: rgb(230, 240, 255);
+        --color-border: hsl(210, 30%, 75%);
+        --color-text: rgb(22, 33, 50);
+        --color-text-base: rgb(255, 255, 255);
+        --color-text-accent: rgb(12, 97, 205);
+        --color-text-muted: rgba(0, 0, 0, 0.75);
+        --color-scrollbar: rgb(80, 110, 140);
+        --color-scrollbar-hover: rgb(50, 80, 110);
+        --color-utility: rgb(108, 148, 196);
+        --color-utility-dark: rgb(26, 56, 86);
+        --color-utility-logo: rgb(11, 71, 180);
+        --color-utility-icon-search: rgb(70, 100, 130);
+        --color-utility-text-search: rgb(103, 130, 160);
+        --shadow-button: rgba(0, 0, 0, 0.25) 0px 3px 1px -2px, rgba(0, 0, 0, 0.18) 0px 2px 2px 0px, rgba(0, 0, 0, 0.15) 0px 1px 5px 0px;
+        --shadow-button-hover: rgba(0, 0, 0, 0.3) 0px 2px 4px -1px, rgba(0, 0, 0, 0.22) 0px 4px 5px 0px, rgba(0, 0, 0, 0.18) 0px 1px 10px 0px;
+        --shadow-inner-focus: var(--color-secondary) inset 0px 0px 0px 1.5px;
+    }
+
+    :root .azure.dark {
+        --color-primary: hsl(183, 100%, 42%);
+        --color-secondary: hsl(196, 98%, 48%);
+        --color-tertiary: hsl(196, 100%, 63%);
+        --color-bg-base: hsl(208, 64%, 10%);
+        --color-bg-primary: hsl(194, 59%, 16%);
+        --color-bg-secondary: hsl(194, 68%, 27%);
+        --color-border: hsl(210, 18%, 91%);
+        --color-text-base: hsl(180, 100%, 93%);
+        --color-scrollbar: hsl(183, 100%, 20%);
+        --color-scrollbar_hover: hsl(183, 100%, 33%);
+    }
+
+    :root .horizon.light {
+        --color-primary: rgb(233, 94, 27);
+        --color-primary-inverted: rgb(255, 236, 220);
+        --color-secondary: rgb(255, 145, 0);
+        --color-secondary-inverted: rgb(255, 235, 200);
+        --color-bg-base: rgb(255, 247, 240);
+        --color-bg-layout: rgb(255, 228, 207);
+        --color-bg-search: rgb(255, 242, 226);
+        --color-border: hsl(30, 45%, 75%);
+        --color-text: rgb(55, 40, 30);
+        --color-text-base: rgb(255, 255, 255);
+        --color-text-accent: rgb(233, 94, 27);
+        --color-text-muted: rgba(55, 40, 30, 0.7);
+        --color-scrollbar: rgb(184, 113, 76);
+        --color-scrollbar-hover: rgb(159, 88, 51);
+        --color-utility: rgb(210, 151, 110);
+        --color-utility-dark: rgb(97, 64, 41);
+        --color-utility-logo: rgb(171, 88, 56);
+        --color-utility-icon-search: rgb(150, 95, 65);
+        --color-utility-text-search: rgb(185, 120, 90);
+        --shadow-button: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+        --shadow-button-hover: rgba(0, 0, 0, 0.25) 0px 2px 4px -1px, rgba(0, 0, 0, 0.18) 0px 4px 5px 0px, rgba(0, 0, 0, 0.15) 0px 1px 10px 0px;
+        --shadow-inner-focus: var(--color-secondary) inset 0px 0px 0px 1.5px;
+    }
+
+    :root .horizon.dark {
+        --color-primary: hsl(14, 100%, 57%);
+        --color-secondary: hsl(45, 100%, 51%);
+        --color-tertiary: hsl(54, 100%, 63%);
+        --color-bg-base: hsl(0, 0%, 100%);
+        --color-bg-primary: hsl(15, 37%, 19%);
+        --color-bg-secondary: hsl(15, 24%, 29%);
+        --color-border: hsl(15, 24%, 38%);
+        --color-text-base: hsl(15, 100%, 87%);
+        --color-scrollbar: hsl(14, 100%, 46%);
+        --color-scrollbar_hover: hsl(14, 100%, 63%);
+    }
+
+    :root .monochrome.light {
+        --color-primary: rgb(60, 60, 60);
+        --color-primary-inverted: rgb(240, 240, 240);
+        --color-secondary: rgb(100, 100, 100);
+        --color-secondary-inverted: rgb(220, 220, 220);
+        --color-bg-base: rgb(255, 255, 255);
+        --color-bg-layout: rgb(245, 245, 245);
+        --color-bg-search: rgb(235, 235, 235);
+        --color-border: hsl(0, 0%, 80%);
+        --color-text: rgb(30, 30, 30);
+        --color-text-base: rgb(255, 255, 255);
+        --color-text-accent: rgb(60, 60, 60);
+        --color-text-muted: rgba(30, 30, 30, 0.7);
+        --color-scrollbar: rgb(150, 150, 150);
+        --color-scrollbar-hover: rgb(100, 100, 100);
+        --color-utility: rgb(200, 200, 200);
+        --color-utility-dark: rgb(80, 80, 80);
+        --color-utility-logo: rgb(40, 40, 40);
+        --color-utility-icon-search: rgb(120, 120, 120);
+        --color-utility-text-search: rgb(180, 180, 180);
+        --shadow-button: rgba(0, 0, 0, 0.1) 0px 3px 1px -2px, rgba(0, 0, 0, 0.08) 0px 2px 2px 0px, rgba(0, 0, 0, 0.06) 0px 1px 5px 0px;
+        --shadow-button-hover: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.15) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+        --shadow-inner-focus: var(--color-secondary) inset 0px 0px 0px 1.5px;
+    }
+
+    :root .monochrome.dark {
+        --color-primary: hsl(0, 0%, 46%);
+        --color-secondary: hsl(0, 0%, 74%);
+        --color-tertiary: hsl(0, 0%, 88%);
+        --color-bg-base: hsl(0, 0%, 7%);
+        --color-bg-primary: hsl(0, 0%, 12%);
+        --color-bg-secondary: hsl(0, 0%, 17%);
+        --color-border: hsl(0, 0%, 20%);
+        --color-text-base: hsl(0, 0%, 88%);
+        --color-scrollbar: hsl(0, 0%, 40%);
+        --color-scrollbar_hover: hsl(0, 0%, 53%);
+    }
+
+    /* Custom Scrollbar Styles */
+    .scrollbar {
+        @apply h-screen overflow-y-hidden transition duration-200;
+    }
+
+    .scrollbar:hover {
+        @apply overflow-y-auto;
+    }
+
+    .scrollbar::-webkit-scrollbar {
+        @apply w-[5px];
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+        @apply bg-skin-base rounded-[10px];
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-skin-scrollbar;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        @apply bg-skin-scrollbar-hover;
+    }
+
+    :root {
+        @apply text-skin transition-colors duration-300 ease-in-out;
+    }
+}
